@@ -81,8 +81,8 @@ I am diligently working on deploying the backend services to Render.com to ensur
 *Step 1: Clone the repository:*
 
 ```Bash
-git clone <PROVIDE_THE_ACTUAL_REPOSITORY_URL>
-cd <PROVIDE_THE_ACTUAL_REPOSITORY_NAME>
+git clone https://github.com/Asmit-cloud/Talent-Bridge.git)
+cd Talent-Bridge
 ```
     
 *Step 2: Create and activate a virtual environment (Recommended):*
@@ -209,12 +209,16 @@ The SkillSwap Network welcomes contributions!
 
 1. **Reporting Bugs:** If you encounter any bugs, please open an issue on the project's GitHub Issues Page.
 <br>
-    Provide a clear description of the bug, steps to reproduce it, and any error messages.
+Provide a clear description of the bug, steps to reproduce it, and any error messages.
+
 2. **Suggesting Features:** Have an idea for a new feature or improvement? Feel free to open an issue on the GitHub Issues Page to discuss it.
+
 3. **General Questions or Feedback:** For general questions or feedback about the project, you can also use the GitHub Issues Page, or if you prefer a more direct approach for quick inquiries, you can reach out via my contact email (see "**Contact Information**" below).
 
 4. **Coding Guidelines:** Follow PEP-8 guidelines for Python.
+
 5. **Pull Request Process:** Describe your changes clearly in your pull request.
+
 6. **Code of Conduct:** To foster a welcoming and inclusive environment, please review the [Code of Conduct](CODE_OF_CONDUCT.md).
 <br>
     All interactions within this project are expected to adhere to these guidelines.
