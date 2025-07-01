@@ -208,8 +208,7 @@ The SkillSwap Network welcomes contributions!
 ### How to Get Help or Provide Feedback
 
 1. **Reporting Bugs:** If you encounter any bugs, please open an issue on the project's GitHub Issues Page.
-<br>
-    Provide a clear description of the bug, steps to reproduce it, and any error messages.
+   Provide a clear description of the bug, steps to reproduce it, and any error messages.
 
 2. **Suggesting Features:** Have an idea for a new feature or improvement? Feel free to open an issue on the GitHub Issues Page to discuss it.
 
@@ -238,12 +237,12 @@ The SkillSwap Network welcomes contributions!
     <br>
     Special thanks to:
 
-        * **Django and Django Channels:** For the powerful web framework and real-time communication capabilities.
+    * **Django and Django Channels:** For the powerful web framework and real-time communication capabilities.
         
-        * **DB Browser for SQLite:** For providing an invaluable tool for database management and inspection.
+    * **DB Browser for SQLite:** For providing an invaluable tool for database management and inspection.
         
-        * **Render:** For the seamless deployment platform that brought SkillSwap Network to life.
+    * **Render:** For the seamless deployment platform that brought SkillSwap Network to life.
         
-        * **Django Documentaion:** For comprehensive guide and tutorials that significantly aided the development process.
+    * **Django Documentaion:** For comprehensive guide and tutorials that significantly aided the development process.
        
 3. **Contact Information:** [Email](mailto:byte.100.tron@gmail.com) me for inquiries.
