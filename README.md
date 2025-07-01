@@ -207,7 +207,8 @@ The SkillSwap Network welcomes contributions!
 
 ### How to Get Help or Provide Feedback
 
-1. **Reporting Bugs:** If you encounter any bugs, please open an issue on the project's GitHub Issues Page.
+1. **Reporting Bugs:** If you encounter any bugs, please open an issue on the project's GitHub Issues Page.  
+
    Provide a clear description of the bug, steps to reproduce it, and any error messages.
 
 2. **Suggesting Features:** Have an idea for a new feature or improvement? Feel free to open an issue on the GitHub Issues Page to discuss it.
@@ -232,9 +233,9 @@ The SkillSwap Network welcomes contributions!
 2. **Author and Acknowledgments:** 
     * **Author:** Asmit De
     * **Acknowledgments:** This project was developed independently by Asmit De.
-    <br>
-    I extend my gratitude to the open-source community for providing the foundational tools and resources, that made SkillSwap Network possible.
-    <br>
+    
+        I extend my gratitude to the open-source community for providing the foundational tools and resources, that made SkillSwap Network possible.
+    
     Special thanks to:
 
     * **Django and Django Channels:** For the powerful web framework and real-time communication capabilities.
