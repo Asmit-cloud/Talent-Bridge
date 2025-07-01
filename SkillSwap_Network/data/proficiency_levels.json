@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Novice",
+		"description": "Has absolutely no experience with the skill and is starting from scratch.",
+		"proficiency_level_order": 0
+	},
+	{
+		"name": "Beginner",
+		"description": "Has basic understanding and can perform simple tasks with guidance.",
+		"proficiency_level_order": 1
+	},
+	{
+		"name": "Intermediate",
+		"description": "Has a solid grap of the fundamentals and can work independently on moderately complex tasks.",
+		"proficiency_level_order": 2
+	},
+	{
+		"name": "Advanced",
+		"description": "Possesses in-depth knowledge and can handle complex problems, often guiding others.",
+		"proficiency_level_order": 3
+	},
+	{
+		"name": "Expert",
+		"description": "Master of the skill, capable of innovation, problem-solving, and teaching at the highest level.",
+		"proficiency_level_order": 4
+	},
+	{
+		"name": "Grandmaster",
+		"description": "The ultimate authority in the skill, defines the best practices and pushes boundaries",
+		"proficiency_level_order": 5
+	}
+]

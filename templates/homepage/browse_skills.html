@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Browse Skills</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_browse_skills.css' %}">
+	
+</head>
+<body class="body">
+	<div class="content-bs">
+		<header class="page-header">
+			<div class="logo-area">
+				<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+			</div>
+			<h1>Browse Skills</h1>
+		</header>
+		
+		<div class="filter-controls">
+			<h2>Currently Viewing: {% if current_skill_type == "needed" %}Skills Needed By Others{% else %}Skills Offered By Others{% endif %}</h2>
+			
+			<div class="type-selection">
+				<label for="skill-type-select">Change View:</label>
+				<select id="skillTypeSelect" onchange="window.location.href = this.value;">
+					<option value="{% url 'browse_skills' %}?type=needed" {% if current_skill_type == "needed" %}selected{% endif %}>Skills Needed</option>
+					<option value="{% url 'browse_skills' %}?type=offered" {% if current_skill_type == "offered" %}selected{% endif %}>Skills Offered</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="skills-listing">
+			{% if all_skills %}
+			
+				{% for skill in all_skills %}
+					<div class="skill-item-container">
+						<div class="skill-info">
+						<h3>{{ skill.name }}</h3>
+							<p>Find users who {% if current_skill_type == "needed" %}need{% else %}offer{% endif %} this skill.</p>
+						</div>
+						<div class="skill-actions">
+							{# The following link will take users to the next page #}
+							<a href="{% url 'skill_users_list' skill_id=skill.id skill_type=current_skill_type %}">
+								View {% if current_skill_type == "needed" %}Needed{% else %}Offered{% endif %}
+							</a>
+						</div>
+						
+						<br><br>
+						
+					</div>
+				{% endfor %}
+				
+			{% else %}
+				<div class="no-skills-message">
+					<p>No skills available to browse yet.</p>
+				</div>
+			{% endif %}
+		</div>
+		
+		{# Pagiantion Controls #}
+		{% if all_skills.has_other_pages %}
+			<div class="pagination">
+				<div class="pagination-nav-buttons">
+					{% if all_skills.has_previous %}
+						<a href="{% url 'browse_skills' %}?page={{ all_skills.previous_page_number }}&type={{ current_skill_type }}" class="pagination-link">&laquo; Previous</a>
+					{% endif %}
+					
+					{% if all_skills.has_next %}
+						<a href="{% url 'browse_skills' %}?page={{ all_skills.next_page_number }}&type={{ current_skill_type }}" class="pagination-link">Next &raquo;</a>
+					{% endif %}
+				</div>
+				
+				<div class="pagination-page-numbers">
+					{% for i in all_skills.paginator.page_range %}
+						{% if all_skills.number == i %}
+							<span class="pagination-current">{{ i }}</span>
+						{% else %}
+							<a href="{% url 'browse_skills' %}?page={{ i }}&type={{ current_skill_type }}" class="pagination-link">{{ i }}</a>
+						{% endif %}
+					{% endfor %}
+				</div>
+				
+			</div>
+		{% endif %}
+		
+	</div>
+	
+	<script src="{% static 'js/bs_animation_delay.js' %}" defer></script>
+	
+</body>
+</html>

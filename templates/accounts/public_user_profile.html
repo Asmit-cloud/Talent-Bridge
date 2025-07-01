@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>{{ target_user.username }}'s Profile</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_public_user_profile.css' %}">
+	
+</head>
+<body class="body">
+	<div class="profile-container">
+		<header class="profile-header">
+			<div class="logo-area">
+				<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+			</div>
+			<h1>{{ target_user.username }}</h1>
+		</header>
+		
+		<main class="profile-content">
+			<section class="profile-card profile-info-section">
+				<h2>Personal Information</h2>
+				<p><strong>Username:</strong> {{ target_user.username }}</p>
+				<p><strong>Bio:</strong> {{ app_requirements.bio|default:"Not Available" }}</p>
+				<p><strong>Location:</strong> {{ app_requirements.location|default:"Not Available" }}</p>
+				<p><strong>Member Since:</strong> {{ target_user.date_joined|date:"M d, Y" }}</p>
+			
+				{% if target_user != current_logged_in_user %}
+					<div class="chat-section">
+						<a href="{% url 'start_chat_with_user' target_user_id=target_user.id %}" class="chat-button">
+							Start Chat with {{ target_user.username }}
+						</a>
+				
+						{% if messages %}
+							<div class="messages-container">
+								{% for message in messages %}
+									{% if message.tags == "info" %}
+										<span class="info-message">{{ message }}</span>
+									{% endif %}
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				{% endif %}
+			</section>
+		
+			<section class="profile-card offered-skills-section">
+				<h2>Skills Offered</h2>
+				{% if offered_skills %}
+					<ul class="skills-list">
+						{% for skill_item in offered_skills %}
+							<li class="skill-item">
+								<strong>{{ skill_item.skill.name }}</strong> ({{ skill_item.proficiency_level.name }})
+								{% if skill_item.description %}
+									<p class="skill-description">{{ skill_item.description }}</p>
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				{% else %}
+				<p class="no-skills-message">No skills offered yet.</p>
+				{% endif %}
+			</section>
+		
+			<section class="profile-card needed-skills-section">
+				<h2>Skills Needed</h2>
+				{% if needed_skills %}
+					<ul class="skills-list">
+						{% for skill_item in needed_skills %}
+							<li class="skill-item">
+								<strong>{{ skill_item.skill.name }}</strong>
+								{% if skill_item.proficiency_level %}({{ skill_item.proficiency_level.name }}){% endif %}
+								{% if skill_item.description %}
+									<p class="skill-description">{{ skill_item.description }}</p>
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				{% else %}
+					<p class="no-skills-message">No skills needed yet.</p>
+				{% endif %}
+			</section>
+		</main>
+		
+		<footer class="profile-footer">
+			{% if last_skill_list_info %}
+				<a href="{% url 'skill_users_list' skill_id=last_skill_list_info.skill_id skill_type=last_skill_list_info.skill_type %}" class="back-link">Back to Skill List</a>
+			{% else %}
+				<a href="{% url 'browse_skills' %}" class="back-link">Back to Browse All Skills</a>
+			{% endif %}
+			{% if not last_skill_list_info %}
+				<a href="{% url 'browse_skills' %}" class="back-link">Back to Browse All Skills</a>
+			{% endif %}
+		</footer>
+		
+	</div>
+	
+	<script src="{% static 'js/pup_animation_delay.js' %}" defer></script>
+	
+</body>
+</html>

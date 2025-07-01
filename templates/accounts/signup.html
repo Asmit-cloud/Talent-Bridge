@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Sign Up</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style_signup.css' %}">
+	
+</head>
+<body class="body">
+
+	<div class="main-content-wrapper">
+	
+		<div class="left-content">
+		
+			<div class="logo-area">
+				<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+			</div>
+			
+			<h1>SkillSwap Network</h1>
+			<p>
+				Exchange skills to ignite your learning journey, accelerate personal growth, and build a powerful network. Experience a life of greater
+				purpose and empowerment.
+			</p>
+		</div>
+		
+		<div class="signup-container">
+			<h1>Sign Up</h1>
+			
+			{# DISPLAYING MESSAGES #}
+			{% if messages %} {# This is a Django template tag that checks if there are any messages in the "messages" context variable #}
+				{# If there are messages, an unordered list is created to display them #}
+				<ul class="messages">
+					{% for message in messages %}
+						{# For each message, create a list item #}
+						{# "{% if message.tags %}" - This checks if the message object (from the loop) has a non-empty attribute called "tags" #}
+						{# "class='{{ message.tags }}'" - If "message.tags" is true, this part adds a "class" attribute To the "&lt;li&gt;" element #}
+						{# The value of this class attribute will be the value of "message.tags" #}
+						{# "{{ message }}" - A Django template variable. It outputs the content of the "messsage" object. #}
+						<li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			
+			{# SIGNUP FORM #}
+			{# Create a HTML form that will send data to the server using the HTTPS POST method #}
+			{# (which is typically used for submitting data that will modify the server's state like creating a new user) #}
+			<form method="post">
+				{% csrf_token %}
+				
+				<div class="form-fields">
+					{% if form.non_field_errors %}
+						<ul class="messages error">
+							{% for error in form.non_field_errors %}
+								<li>{{ error }}</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+					
+					{% for field in form %}
+						<p>
+							{{ field.label_tag }}
+							{{ field }}
+							{% if field.help_text %}
+								<span class="help-text">{{ field.help_text }}</span>
+							{% endif %}
+							{% if field.errors %}
+								<ul class="messages error field-errors">
+									{% for error in field.errors %}
+										<li>{{ error }}</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</p>
+					{% endfor %}
+				</div>
+				
+				<button type="submit" class="signup-button">Sign Up</button>
+			</form>
+		
+			{# "{% url 'login' %}" - A Django template tag that looks up the URL associated with the name "login" in the project's URL configurations #}
+			<p class="login-link">Already have an account?<a href="{% url 'login' %}"> Log In</a></p>
+			
+		</div>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>User Profile</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_user_profile.css' %}">
+	
+</head>
+<body class="body">
+	<div class="content">
+		<div class="logo-area">
+			<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+			
+			{% if show_home_button %}
+				<div class="home-button-container">
+					<a href="{% url 'home' %}" class="btn btn-home">Home</a>
+				</div>
+			{% endif %}
+			
+		</div>
+		
+		<div class="header-section">
+			<h1 class="profile-title">{{ user.username }}'s Profile</h1>
+		
+			{# Check if "last_skill_list_info" exists and is not "None" or an empty object in the template's context #}
+			{% if last_skill_list_info %}
+				{% with skill_id=last_skill_list_info.skill_id skill_type=last_skill_list_info.skill_type %}
+					<a href="{% url 'skill_users_list' skill_id=skill_id skill_type=skill_type %}" class="btn btn-back-to-list">
+						Back to Users {% if last_skill_list_info.skill_type == "needed" %}Needing{% else %}Offering{% endif %} This Skill
+					</a>
+				{% endwith %}
+			{% endif %}
+		</div>
+		
+		<div class="main-profile-content">
+			<div class="card personal-info-card">
+				<div class="card-header">
+					<h3>Personal Information</h3>
+				</div>
+				<div class="card-body">
+					<div class="personal-info-details">
+						<p><strong>Username:</strong> {{ user.username }}</p>
+						<p><strong>Bio:</strong> {{ app_requirements.bio|default:"Not Available" }}</p>
+						<p><strong>Location:</strong> {{ app_requirements.location|default:"Not Available" }}</p>
+						<p><strong>Member Since:</strong> {{ user.date_joined|date:"M d, Y" }}</p>
+					</div>
+				
+					{% if not last_skill_list_info %}
+						<a href="{% url 'profile_completion' %}" class="btn btn-edit-profile">Edit Profile</a>
+					{% endif %}
+				</div>
+			</div>
+		
+			<div class="card skills-offered-card">
+				<div class="card-header">
+					<h3>Skills Offered</h3>
+				</div>
+				<div class="card-body">
+					{% if offered_skills %}
+						<ul class="list-group skills-list">
+							{% for skill in offered_skills %}
+								<li class="list-group-items skill-item">
+									<strong>{{ skill.skill.name }}</strong> ({{ skill.proficiency_level.name }})
+									{% if skill.description %}
+										<p class="skill-description">{{ skill.description }}</p>
+									{% endif %}
+								</li>
+						{% endfor %}
+						</ul>
+					{% else %}
+						<p class="no-skills-message">No skills offered yet. <a href="{% url 'add_skills' %}">Add Some!</a></p>
+					{% endif %}
+				</div>
+			</div>
+		
+			<div class="card skills-needed-card">
+				<div class="card-header">
+					<h3>Skills Needed</h3>
+				</div>
+				<div class="card-body">
+					{% if needed_skills %}
+						<ul class="list-group skills-list">
+							{% for skill in needed_skills %}
+								<li class="list-group-items skill-item">
+									<strong>{{ skill.skill.name }}</strong> ({{ skill.proficiency_level.name }})
+									{% if skill.description %}
+										<p class="skill-description">{{ skill.description }}</p>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+						<p class="no-skills-message">No skills needed yet. <a href="{% url 'add_skills' %}">Add Some!</a></p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script src="{% static 'js/up_animation_delay.js' %}" defer></script>
+	
+</body>
+</html>

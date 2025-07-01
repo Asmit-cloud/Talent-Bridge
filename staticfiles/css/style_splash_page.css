@@ -1,0 +1,228 @@
+/* General Body Styles */
+body {
+	font-family: "Segoe UI";	
+	background-color: #f8f8f8;
+	color: #333;
+	margin: 0;
+}
+
+/* Styling the logo area */
+.logo-area {
+	margin-bottom: 10px;
+	text-align: center;
+	opacity: 0;
+	animation: fadeIn 0.7s ease-out forwards;
+	animation-delay: 0.1s;
+}
+
+/* Styling the Brand Logo */
+.brand-logo {
+	max-width: 400px;
+	height: auto;
+	display: block;
+	margin: -30px auto 0 auto;
+}
+
+/* Container for the main content to add some visual structure */
+.container {
+	background-color: #ffffff;
+	padding: 40px 60px;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	max-width: 1200px; /* Limit the width for better readability on larger screens */
+	width: 100%; /* Responsive width */
+	box-sizing: border-box;
+	margin: 40px auto;
+	transform: translateY(0);
+	opacity: 0; /* Ensure container is hidden initially */
+	animation: fadeInScale 0.7s ease-out forwards; /* Entry animation */
+}
+
+/* Header Styles */
+h1 {
+	background: linear-gradient(to right, #0279e0, #0094ff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #0067c0; /* Fallback for browsers that do not support text clipping */
+	margin-top: 90px;
+	margin-bottom: 45px;
+	font-size: 3em; /* Larger font size for prominence */
+	text-align: center;
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: -0.5px;
+	opacity: 0;
+	animation: fadeIn 1s ease-out forwards;
+	animation-delay: 0.3s;
+}
+
+/* Styling the Splashpage Info */
+.splashpage-info {
+	margin-top: 30px;
+	margin-bottom: 40px;
+	padding: 20px;
+	background-color: #ffffff;
+	border-radius: 8px;
+	border: 1px solid #e0e0e0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	line-height: 1.7;
+	text-align: left;
+	opacity: 0;
+	animation: fadeIn 1s ease-out forwards;
+	animation-delay: 0.6s;
+}
+
+.splashpage-info h2 {
+	font-size: 1.8em;
+	background: linear-gradient(to right, #0279e0, #0094ff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #007bff;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	border-bottom: 2px solid #e0e9f1;
+	padding-bottom: 8px;
+}
+
+.splashpage-info h3 {
+	font-size: 1.4em;
+	background: linear-gradient(to right, #0279e0, #0094ff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #4a5a6a;
+	margin-top: 20px;
+	margin-bottom: 8px;
+}
+
+.splashpage-info h2:not(:first-child) {
+	margin-top: 40px;
+}
+
+.splashpage-info p {
+	font-size: 1em;
+	line-height: 1.7;
+	margin-bottom: 15px;
+	color: #556a7f;
+}
+
+.splashpage-info ul {
+	list-style: disc;
+	margin: 0 0 20px 20px;
+	padding: 0;
+	text-align: left;
+}
+
+.splashpage-info ul li {
+	font-size: 1em;
+	line-height: 1.7;
+	color: #556a7f;
+	margin-bottom: 8px;
+}
+
+.splashpage-info strong {
+	color: #334455;
+}
+
+/* General Link Styles */
+a {
+	color: #0067c0;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 600;
+	transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transitions */
+}
+
+a:hover {
+	color: #005096;
+	text-decoration: underline;
+}
+
+/* Specific styles for the "Log In" link */
+.login-link-container {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.login-link-container a {
+	display: inline-block;
+	width: calc(100% - 140px);
+	max-width: 200px; /* Max width for the button */
+	margin: 30px auto; /* Center the button and top/bottom margin */
+	padding: 17px 24px;
+	background-image: linear-gradient(to right, #0067c0, #0094ff);
+	color: #ffffff;
+	border-radius: 8px;
+	font-size: 1.5em;
+	box-shadow: 0 4px 15px rgba(0, 103, 192, 0.25);
+	transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+	text-align: center;
+	opacity: 0;
+	animation: fadeIn 1s ease-out forwards;
+	animation-delay: 1.6s;
+}
+
+.login-link-container a:hover {
+	background-image: linear-gradient(to right, #165ccc, #289ded);
+	transform: translateY(-3px); /* Slight left effect */
+	box-shadow: 0 6px 20px rgba(0, 103, 192, 0.35);
+	text-decoration: none;
+}
+
+/* Container for the "Sign Up" button */
+.signup-button-container {
+	margin-top: 20px;
+	text-align: center;
+	opacity: 0;
+	animation: fadeIn 1s ease-out forwards;
+	animation-delay: 1.9s;
+}
+
+/* Styling the Secondary button */
+.secondary-button {
+	display: inline-block;
+	padding: 12px 25px;
+	border: 2px solid #0067c0;
+	color: #0067c0;
+	background-color: transparent;
+	border-radius: 8px;
+	font-size: 1.1em;
+	font-weight: 600;
+	text-decoration: none;
+	text-align: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.secondary-button:hover {
+	color: #0079cc;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.secondary-button:active {
+	transform: translateY(0);
+	box-shadow: none;
+}
+
+/* Animations */
+@keyframes fadeInScale {
+	from {
+		opacity: 0;
+		transform: scale(0.95) translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Add Your Skills</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_add_skills.css' %}">
+	
+</head>
+<body class="body">
+	<div class="container">
+	
+		<header>
+			<div class="logo-area">
+				<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+			</div>
+			
+			<h2>Build Your Skill Exchange Profile</h2>
+			<p class="description-text">Define your contributions and aspirations:</p>
+			<ul class="skill-questions">
+				<li>What skills can you teach or offer?</li>
+				<li>What skills are you hoping to learn or gain?</li>
+			</ul>
+		</header>
+	
+		<form method="post">
+			{% csrf_token %}
+			
+			<input type="hidden" id="user_id" value="{{ request.user.id }}">
+		
+			{# OFFERED SKILLS FORMSET #}
+			<div class="skill-section offered-skill-section">
+				<h4>Skills You Offer</h4>
+				{{ offered_skill_formset.management_form }}
+				<div id="offered-skills-container">
+					{% for form in offered_skill_formset %}
+						<div class="card-like">
+							<p>Skill {{ forloop.counter }}</p>
+				{{ form.id }}
+				
+				<div class="form-group">
+					{{ form.skill.label_tag }}
+					{{ form.skill }}
+					{% if form.skill.errors %}
+						{% for error in form.skill.errors %}
+							<small class="text-danger">{{ error }}</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				
+				<div class="form-group">
+					{{ form.proficiency_level.label_tag }}
+					{{ form.proficiency_level }}
+					{% if form.proficiency_level.errors %}
+						{% for error in form.proficiency_level.errors %}
+							<small class="text-danger">{{ error }}</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				
+				<div class="form-group">
+					{{ form.description.label_tag }}
+					{{ form.description }}
+					{% if form.description.errors %}
+						{% for error in form.description.errors %}
+							<small class="text-danger">{{ error }}</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				
+				{% if form.DELETE %}
+					<div class="form-group checkbox-container">
+						{{ form.DELETE }}
+						<label  for="{{ form.DELETE.id_for_label }}">DELETE</label>
+					</div>
+				{% endif %}
+				
+						</div>
+					{% endfor %}
+					{% if offered_skill_formset.non_form_errors %}
+						<div class="alert-danger">
+							{% for errors in offered_skill_formset.non_form_errors %}
+								{{ error }}
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+				<button type="button" id="add-offered-skill" class="add-skill-button">Add Another Offered Skill</button>
+			</div>
+			
+			<hr>
+		
+			{# NEEDED SKILL FORMSET #}
+			<div class="skill-section needed-skill-section">
+				<h4>Skills You Need</h4>
+				{{ needed_skill_formset.management_form }}
+				<div id="needed-skills-container">
+					{% for form in needed_skill_formset %}
+						<div class="card-like">
+							<p>Skill {{ forloop.counter }}</p>
+				{{ form.id }}
+				
+				<div class="form-group">
+					{{ form.skill.label_tag }}
+					{{ form.skill }}
+					{% if form.skill.errors %}
+						{% for error in form.skill.errors %}
+							<small class="text-danger">{{ error }}</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				
+				<div class="form-group">
+					{{ form.proficiency_level.label_tag }}
+					{{ form.proficiency_level }}
+					{% if form.proficiency_level.errors %}
+						{% for error in form.proficiency_level.errors %}
+							<small class="text-danger">{{ error }}</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				
+				<div class="form-group">
+					{{ form.description.label_tag }}
+					{{ form.description }}
+					{% if form.description.errors %}
+						{% for error in form.description.errors %}
+							<small class="text-danger">{{ error }}</small>
+						{% endfor %}
+					{% endif %}
+				</div>
+				
+				{% if form.DELETE %}
+					<div class="form-group checkbox-container">
+						{{ form.DELETE }}
+						<label  for="{{ form.DELETE.id_for_label }}">DELETE</label>
+					</div>
+				{% endif %}
+				
+						</div>
+					{% endfor %}
+					{% if needed_skill_formset.non_form_errors %}
+						<div class="alert-danger">
+							{% for errors in needed_skill_formset.non_form_errors %}
+								{{ error }}
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+				<button type="button" id="add-needed-skill" class="add-skill-button">Add Another Needed Skill</button>
+			</div>
+			
+			<div class="form-buttons">
+				<button type="submit">Save My Skills</button>
+			</div>
+		</form>
+	</div>
+	
+	<script src="{% static 'js/skills_formset_trytwo.js' %}"></script>
+</body>
+</html>

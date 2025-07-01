@@ -1,0 +1,205 @@
+.body {
+	font-family: "Segoe UI";
+	margin: 0;
+	padding: 0;
+	background-color: #f8f8f8;
+	color: #343a40;
+	line-height: 1.6;
+	animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling the logo area */
+.logo-area {
+	margin-top: 10px;
+	opacity: 0;
+	animation: fadeIn 0.63s ease-out forwards;
+	animation-delay: 0.1s;
+}
+
+/* Styling the Brand Logo */
+.brand-logo {
+	max-width: 280px;
+	height: auto;
+	display: block;
+	margin: 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* Styling the Header */
+.site-header {
+	background-color: #ffffff;
+	padding: 20px 0;
+	border-bottom: 1px solid #d0d7e0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+
+.site-title {
+	margin: 0;
+	background: linear-gradient(to right, #199fff, #0094ff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+	font-size: 2.8em;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 1.5px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling the Main Content Area */
+.main-content {
+	padding: 60px 0;
+	min-height: calc(100vh - 250px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content-wrapper {
+	background-color: #ffffff;
+	padding: 50px 60px;
+	border-radius: 12px;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	text-align: center;
+	width: 100%;
+	opacity: 0;
+	animation: contentFadeIn 1.2s ease-out 0.3s forwards;
+	position: relative;
+	overflow: hidden;
+}
+
+/*  A subtle background pattern or element to the content wrapper */
+.content-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: radial-gradient(circle at top left, rgba(0, 123, 255, 0.05) 1px, transparent 1px), radial-gradient(circle at bottom right, rgba(200, 220, 255, 0.05) 1px, transparent 1px);
+	background-size: 20px 20px;
+	opacity: 0.5;
+	z-index: 0;
+}
+
+.content-wrapper > * {
+	position: relative;
+	z-index: 1;
+}
+
+/* Styling Buttons */
+.button-primary,
+.button-secondary {
+	display: inline-block;
+	padding: 12px 28px;
+	text-decoration: none;
+	border-radius: 12px;
+	font-size: 0.89em;
+	transition: all 0.4s ease;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	color: white;
+	background-size: 200% auto;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+	border: none;
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	background-position: right center;
+}
+
+.button-primary {
+	background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 50%, #6a11cb 100%);
+}
+
+.button-secondary {
+	background-image: linear-gradient(to right, #b0bec5 0%, #78909c 50%, #b0bec5 100%);
+}
+
+/* User Navigation (Authenticated) */
+.user-nav {
+	margin-top: 30px;
+}
+
+.user-nav .nav-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.user-nav .nav-links li {
+	width: 100%;
+}
+
+.user-nav .nav-links a {
+	display: block;
+	background: linear-gradient(to right, #eaf2f8, #f0f4f8);
+	color: #007bff;
+	text-decoration: none;
+	padding: 15px 25px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	font-weight: 615;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-nav .nav-links a:hover {
+	background-color: #dbe4ee;
+	color: #0056b3;
+	transform: translateY(5px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the Footer */
+.site-footer {
+	background-color: #2c3e50;
+	color: #f0f4f8;
+	padding: 25px 0;
+	text-align: center;
+	font-size: 0.9em;
+	border-top: 1px solid #3b5066;
+	box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-footer p {
+	margin: -10px 0;
+}
+
+/* Aniamtions */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes contentFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

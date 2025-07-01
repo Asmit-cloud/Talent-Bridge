@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>SkillSwap Network</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style_splash_page.css' %}">
+	
+</head>
+<body class="body">
+
+	<div class="container">
+	
+		<div class="logo-area">
+			<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+		</div>
+		
+		<h1>Welcome to SkillSwap Network</h1>
+		
+			<section class="splashpage-info">
+				<h2>Connect, Collaborate, Grow</h2>
+					
+				<h3>Connect:</h3>
+					<p>Join SkillSwap Network and find other individuals. Emphasize the creation of relationships and the expansion of your professional and personal circle.</p>
+					<p>Overcome isolation, broaden your network, and find individuals who can help you or who can be helped by you in return.</p>
+					
+				<h3>Collaborate:</h3>
+					<p>Actively engage and interact with other users. Work together on projects, exchange knowledge, mentor, or swap skills directly.</p>
+					<p>You can apply your skills, learn new ones through hands on experience, complete projects that might have been difficult individually, and gain practical experience in a supportive environment.</p>
+					
+				<h3>Grow:</h3>
+					<p>The ultimate benefit and long-term outcome of connecting and collaborating. Grow yourself and your profession, expand your skillset, achieve your goals, and increase opportunities.</p>
+					<p>Lead yourself to an overall self-improvement and increased potential by enhancing your career prospects, developing new hobbies, achieving personal milestones, and continuously evolving your capabilities.</p>
+					
+				<h2>A Brief Intoduction to SkillSwap Network</h2>
+					<p>SkillSwap Network is an innovative online platform that makes it easier for people to share their skills and knowledge among individuals.</p>
+					<p>It addresses the common problem of underutilized skills and the difficulties people face in acquiring new ones or finding practical application for their existing skills without formal training or significant financial investment.</p>
+					<p>By connecting people willing to teach what they know with those eager to learn, SkillSwap Network fosters a collaborative environment that promotes personal and professional growth through reciprocal learning and mutual support.</p>
+					
+				<h2>Benefits of Using SkillSwap Network</h2>
+					<ul>
+						<li>Acquire new skills without high costs of traditional courses, certifications, and workshops. Gain from one-on-one or small-group learning directly from individuals with practical experience.<br>Access a wide array of skills, from professional (e.g., marketing, coding, design) to practical (e.g., cooking, instument playing, DIY repairs) and creative (e.g., painting, writing).</li>
+						<li>Put your existing skills to good use and gain satisfaction from helping others. Establish yourself as an expert in your field within the community.<br>Teaching a skill often deepens your own understanding and proficiency.</li>
+						<li>Forge genuine connections with like-minded individuals, mentors, and mentees based on shared interests and learning goals. Find partners for side projects, creative endeavors or even get help with a task where you lack specific expertise.<br>Grow your professional contacts and personal circle in a collaborative environment.</li>
+						<li>Engage in lifelong learning, constantly expanding your knowledge base and adapting to new challenges.<br>Gain confidence by both teaching and mastering new abilities. Be a part of a supportive community focused on mutual growth and skill development.</li>
+					</ul>
+					<p>In essence, SkillSwap Network offers a dynamic, accessible, and community-driven alterantive for skill development and exchange, benefiting both learners and teachers in tangible ways!</p>
+						
+				<h2>How This Paltform Works</h2>
+					<p><strong>Create A Profile:</strong> Log In or Sign Up to start your skill-swapping adventure!</p>
+					<p><strong>Browse:</strong> Browse for the specific skills you want to teach/offer or want to learn.</p>
+					<p><strong>Connect and Swap:</strong> Go to their profile, connect to them, discuss a skill exchange, and then collaborate and learn.</p>
+			</section>
+			
+		<p class="login-link-container"><a href="{% url 'login' %}">Log In</a></p>
+		
+		<div class="signup-button-container">
+			<a href="{% url 'signup' %}" class="secondary-button">Sign Up</a>
+		</div>
+		
+	</div>
+	
+</body>
+</html>

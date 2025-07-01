@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Add Some Details</title>
+	
+	{# Load the static files tag #}
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	{# Link the CSS file #}
+	<link rel="stylesheet" href="{% static 'css/style_profile_completion.css' %}">
+	
+</head>
+<body class="body">
+	<div class="container">
+		<div class="form-card">
+		
+			<div class="logo-area">
+				<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+			</div>
+			
+			<h1>Add Some Details to Your Profile</h1>
+			<p>
+				To get you started and help others discover the skills you share within your region, please complete your profile with a short bio about 
+				yourself, and your location (district, country).
+			</p>
+	
+			<form method="post">
+				{% csrf_token %}
+				
+				<div class="form-fields">
+					{{ form.as_p }}
+				</div>
+				
+				<button type="submit" class="submit-button">
+					{% if is_existing_profile %}
+						Save
+					{% else %}
+						Proceed
+					{% endif %}
+				</button>
+				
+			</form>
+		</div>
+	</div>
+</body>
+</html>

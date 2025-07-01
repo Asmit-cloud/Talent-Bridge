@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>{{ current_page_title }}</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_skill_users_list.css' %}">
+	
+</head>
+<body class="body">
+	<div class="main-content-wrapper">
+		<div class="logo-area">
+			<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+		</div>
+		<div class="content-header">
+			<h1 id="main-page-title">{{ current_page_title }}</h1>
+				<p>Viewing: <strong>{{ skill.name}}</strong></p>
+		</div>
+		
+		<div class="users-list-container">
+			{% if users_with_skill %}
+				<ul class="user-skill-list">
+					{% for item in users_with_skill %}
+						<li class="user-skill-item">
+							<div class="user-info">
+								{# Link to the other user's profile #}
+								<a href="{% url 'public_user_profile' user_id=item.user.id %}" class="username-link">
+									{{ item.user.username }}
+								</a>
+								{% if item.proficiency_level %}
+									<span class="proficiency-level"> (Proficiency: {{ item.proficiency_level.name }})</span>
+								{% endif %}
+							</div>
+							{% if item.description %}
+								<p class="skill-description">- {{ item.description }}</p>
+							{% endif %}
+							
+						</li>
+					{% endfor %}
+					
+				</ul>
+			{% else %}
+				<p class="no-users-message">No users currently {% if skill_type == "needed" %}needing{% else %}offering{% endif %} this skill.</p>
+			{% endif %}
+		</div>
+		
+		<br><br>
+		<div class="back-link-container">
+			<a href="{% url 'browse_skills' %}" class="back-link">Back to Browse All Skills</a>
+		</div>
+		
+	</div>
+	
+	<script src="{% static 'js/sul_animation_delay.js' %}" defer></script>
+	
+</body>
+</html>

@@ -1,0 +1,288 @@
+/* General Body Styles */
+body {
+	font-family: "Segoe UI";
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f8f8;
+	color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	min-height: 100vh;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Main container for the profile */
+.profile-container {
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	padding: 30px 40px;
+	max-width: 1200px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	animation: fadeInUp 0.8S ease-out forwards;
+	animation-delay: 0.2s;
+	opacity: 0;
+}
+
+/*  Header Section */
+.profile-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.brand-logo {
+	max-width: 217px;
+	height: auto;
+	margin-bottom: 15px;
+}
+
+.profile-header h1 {
+	font-size: 2.5em;
+	background: linear-gradient(45deg, #17a1eb, #3bb4f5);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin: 0;
+	font-weight: 700;
+	animation: fadeInUp 0.8s ease-out forwards;
+	animation-delay: 0.4s;
+	opacity: 0;
+}
+
+/* Content Sections (Cards) */
+.profile-content {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 25px;
+}
+
+@media (min-width: 768px) {
+	.profile-content {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+	
+	.profile-info-section {
+		grid-column: 1 / -1;
+	}
+}
+
+.profile-card {
+	background-color: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 10px;
+	padding: 25px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	animation: fadeInUp 0.8s ease-out forwards;
+	opacity: 0;
+}
+
+.profile-info-section { animation-delay: 0.6s; }
+.offered-skill-section { animation-delay: 0.8s; }
+.needed-skill-section { animation-delay: 1.0s; }
+
+.profile-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h2 {
+	font-size: 1.8em;
+	background: linear-gradient(90deg, #17a1eb, #3bb4f5);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #34495e;
+	margin-top: 0;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #e0e0e0;
+}
+
+/* Personal Informatoin Section */
+.info-item {
+	margin-bottom: 10px;
+	font-size: 1.1em;
+}
+
+.info-item strong {
+	color: #555;
+	min-width: 120px;
+	display: inline-block;
+}
+
+/* Chat Button */
+.chat-section {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.chat-button {
+	display: inline-block;
+	background: linear-gradient(45deg, #17a1eb, #3bb4f5);
+	color: #fff;
+	padding: 12px 25px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+	box-shadow: 0 4px 10px rgba(93, 156, 236, 0.3);
+	border: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.chat-button::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, #3bb4f5, #17a1eb);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s ease-out;
+	z-index: -1;
+	border-radius: 8px;
+}
+
+.chat-button:hover::before {
+	transform:scaleX(1);
+}
+
+.chat-button:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 15px rgba(93, 156, 236, 0.4);
+}
+
+/* Messages */
+.messages-container {
+	margin-top: 15px;
+}
+
+.info-message {
+	background-color: #d9edf7;
+	color: #31708f;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: 1px solid #bce8f1;
+	display: flex;
+	text-align: center;
+	font-size: 0.95em;
+}
+
+/* Skills List */
+.skills-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.skill-item {
+	border-left: 6px solid #3bb4f5;
+	background-color: #eaf3f8;
+	padding: 12px 15px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	font-size: 1.05em;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+	transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background-color 0.2s ease-out;
+	opacity: 0;
+	animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.skill-item strong {
+	color: #34495e;
+	margin-right: 5px;
+}
+
+.skill-item:hover {
+	transform: translateY(7.5px);
+	background-color: #dfeff7;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.skill-item description {
+	font-style: italic;
+	color: #666;
+	margin-top: 5px;
+	margin-bottom: 0;
+	font-size: 0.9em;
+}
+
+.no-skills-message {
+	color: #777;
+	font-style: italic;
+	text-align: center;
+	padding: 15px 0;
+}
+
+/* Footer Navigation */
+.profile-footer {
+	text-align: center;
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 1px solid #eee;
+}
+
+.back-link {
+	display: inline-block;
+	background: linear-gradient(45deg, #17a1eb, #3bb4f5);
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.1em;
+	padding: 10px 15px;
+	margin: 0 10px;
+	border: none;
+	border-radius: 8px;
+	transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.back-link::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, #3bb4f5, #17a1eb);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s ease-out;
+	z-index: -1;
+	border-radius: 8px;
+}
+
+.back-link:hover::before {
+	transform: scaleX(1);
+}
+
+.back-link:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}

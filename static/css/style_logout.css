@@ -1,0 +1,144 @@
+body {
+	margin: 0;
+	font-family: "Segoe UI";
+	background-color: #f8f8f8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	color: #333;
+	text-align: center;
+	overflow: hidden;
+}
+
+/* Animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Main Container */
+.logout-container {
+	background-color: #ffffff;
+	padding: 40px;
+	border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	max-width: 1200px;
+	width: 100%;
+	box-sizing: border-box;
+	animation: fadeIn 0.8s ease-out forwards;
+	opacity: 0;
+	animation-delay: 0.2s;
+}
+
+/* Logo Area */
+.logo-area {
+	margin-bottom: 30px;
+}
+
+.brand-logo {
+	max-width: 180px;
+	height: auto;
+	border-radius: 8px;
+}
+
+/* Content Area */
+.content-area h1 {
+	font-size: 2.2em;
+	color: #2c3e50;
+	margin-bottom: 25px;
+	font-weight: 700;
+	background: linear-gradient(to right, #ff9524, #ff5f24);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+	transition: all 0.3s ease;
+}
+
+.content-area p {
+	font-size: 1.1em;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+/* Styling Buttons */
+.btn {
+	display: inline-block;
+	background-image: linear-gradient(to right, #ff9524, #ff5f24);
+	color: #ffffff;
+	padding: 12px 25px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: background-image 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+	box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+	border: none;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-image: linear-gradient(to right, #ff8400, #ff4500);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 15px rgba(41, 128, 185, 0.4);
+}
+
+/* Signup Text and Link */
+.signup-text {
+	margin-top: 25px;
+	font-size: 1em;
+	color: #555;
+}
+
+.signup-text a {
+	background: linear-gradient(to right, #ff9524, #ff5f24);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.3s ease;
+}
+
+.signup-text a:hover {
+	background: linear-gradient(to right, #ff8400, #ff4500);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: underline 1.5px;
+	text-decoration-color: #ff6500;
+}
+
+@media (max-width: 600px) {
+	.logout-container {
+		padding: 25px;
+		margin: 20px;
+	}
+	
+	.content-area h1 {
+		font-size: 1.8em;
+	}
+	
+	.btn {
+		padding: 10px 20px;
+		font-size: 0.9em;
+	}
+	
+	.brand-logo {
+		max-width: 150px;
+	}
+}
+
+@media (max-width: 400px) {
+	.content-area h1 {
+		font-size: 1.5em;
+	}
+	
+	.content-area p, .signup-text {
+		font-size: 0.9em;
+	}
+}

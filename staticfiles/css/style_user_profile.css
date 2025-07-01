@@ -1,0 +1,311 @@
+/* Base Styles */
+body {
+	font-family: "Segoe UI";
+	background-color: #ffffff;
+	color: #333;
+	line-height: 1.6;
+	margin: 0;
+	padding: 20px;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Main Content Wrapper */
+.content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	animation: fadeIn 1s ease-out forwards;
+}
+
+/* Styling the Logo Area */
+.logo-area {
+	text-align: center;
+	margin-bottom: 40px;
+	position: relative;
+	display: block;
+}
+
+.brand-logo {
+	max-width: 275px;
+	height: auto;
+	border-radius: 8px;
+}
+
+/* Header section for profile title and back link */
+.header-section {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.profile-title {
+	font-size: 2.8em;
+	color: #2c3e50;
+	margin-bottom: 20px;
+	font-weight: 700;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+	background: linear-gradient(90deg, #2052e8, #2362f7);          
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* Styling the Buttons */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 25px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	border: none;
+	font-size: 1em;
+}
+
+.btn-back-to-list {
+	background: linear-gradient(to right, #345eda, #477bf3);                                 
+	color: #ffffff;
+	box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+	margin-top: 15px;
+}
+
+.btn-back-to-list:hover {
+	background: linear-gradient(to right, #2e54c7, #4070de);                                
+	box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+	transform: translateY(-2px);
+}
+
+.btn-edit-profile {
+	background: linear-gradient(to right, #345eda, #477bf3);                                
+	color: #ffffff;
+	box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+	margin-top: 20px;
+}
+
+.btn-edit-profile:hover {
+	background: linear-gradient(to right, #2e54c7, #4070de);                                
+	box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+	transform: translateY(-5px);
+}
+
+.btn-home {
+	background: linear-gradient(to right, #345eda, #477bf3);                                
+	color: #ffffff;
+	box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.btn-home:hover {
+	background: linear-gradient(to right, #2e54c7, #4070de);                                
+	box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+	transform: translateY(-2px);
+}
+
+.home-button-container {
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(50%);
+	margin: 0;
+	z-index: 10;
+}
+
+/* Main profile content layout */
+.main-profile-content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+/* General Card Styles */
+.card {
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	overflow: hidden;
+	flex: 1;
+	min-width: 300px;
+	max-width: 450px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Styles for card headers */
+.card-header {
+	background: linear-gradient(135deg, #345eda, #477bf3);                                   
+	color: #ffffff;
+	padding: 18px 25px;
+	font-weight: 600;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-header h3 {
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: 600;
+	background: linear-gradient(45deg, #ffffff, #e0f2f7);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+	display: inline-block;
+}
+
+/* Styles for card body */
+.card-body {
+	padding: 20px;
+	padding-bottom: 35px;
+}
+
+/* Specific styles for personal information */
+.personal-info-details p {
+	margin-bottom: 12px;
+	font-size: 1.05em;
+	color: #555;
+}
+
+.personal-info-details p strong {
+	color: #333;
+	font-weight: 500;
+	min-width: 29px;
+	display: inline-block;
+}
+
+/* Styles for skills list */
+.skills-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.skill-item {
+	background-color: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 15px 20px;
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	position: relative;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+	animation: fadeIn 1s ease-out forwards;
+}
+
+.skill-item.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.skill-item:last-child {
+	margin-bottom: 0;
+}
+
+.skill-item strong {
+	color: #34495e;
+	font-weight: 600;
+	font-size: 1.1em;
+}
+
+.skill-item span {
+	font-weight: 500;
+	color: #666;
+}
+
+.skill-description {
+	font-size: 0.95em;
+	color: #777;
+	margin-top: 8px;
+	padding-left: 5px;
+	border-left: 3px solid #f39c12;
+}
+
+/* Message for no skills */
+.no-skills-messgae {
+	font-style: italic;
+	color: #777;
+	text-align: center;
+	padding: 20px;
+	border: 1px dashed #ccc;
+	border-radius: 8px;
+	margin-top: 20px;
+}
+
+.no-skills-messgae a {
+	color: #3498db;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.no-skills-messgae a:hover {
+	text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+	.content {
+		padding: 10px;
+	}
+	
+	.profile-title {
+		font-size: 2.2em;
+	}
+	
+	.main-profile-content {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.card {
+		max-width: 95%;
+		min-width: unset;
+	}
+	
+	.btn {
+		width: 100%;
+		margin-top: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.body {
+		padding: 10px;
+	}
+	
+	.profile-title {
+		font-size: 1.8em;
+	}
+	
+	.card-header h3 {
+		font-size: 1.3em;
+	}
+	
+	.card-body {
+		padding: 15px;
+	}
+	
+	.btn {
+		padding: 10px 20px;
+		font-size: 0.9em;
+	}
+}

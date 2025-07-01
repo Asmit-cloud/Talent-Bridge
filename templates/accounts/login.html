@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Log In</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style_login.css' %}">
+	
+</head>
+<body class="body">
+
+	<div class="left-content">
+	
+		<div class="logo-area">
+			<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+		</div>
+		
+		<h1>SkillSwap Network</h1>
+		<p>Exchanging skills is a powerful way to continuously learn, grow, and connect with others, leading to a more fulfilling and empowered life.</p>
+	</div>
+	
+	<div class="login-container">
+	
+		<h1>Log In</h1>
+		
+		{# DISPLAYING MESSAGES #}
+		{% if messages %} {# This is a Django template tag that checks if there are any messages in the "messages" context variable #}
+			{# If there are messages, an unordered list is created to display them #}
+			<ul class="messages">
+				{% for message in messages %}
+					{# For each message, create a list item #}
+					{# "{% if message.tags %}" - This checks if the message object (from the loop) has a non-empty attribute called "tags" #}
+					{# "class='{{ message.tags }}'" - If "message.tags" is true, this part adds a "class" attribute To the "&lt;li&gt;" element #}
+					{# The value of this class attribute will be the value of "message.tags" #}
+					{# "{{ message }}" - A Django template variable. It outputs the content of the "messsage" object. #}
+					<li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		
+		{#LOGIN FORM #}
+		{# Create a HTML form that will send data to the server using the HTTPS POST method #}
+		{# (which is typically used for submitting data that will modify the server's state like creating a new user) #}
+		<form method="post">
+			{% csrf_token %}
+			{# The following line is how you render the Django form that was passed to the template in the context (as the variable 'form' #}
+			{# The ".as_p" attribute renders each form field wrapped in a "&lt;p&gt;" tag #}
+			
+			<div class="form-fieds">
+				{{ form.as_p }}
+			</div>
+			
+			<button type="submit">Log In</button>
+		</form>
+		
+		{# "{% url 'signup' %}" - A Django template tag that looks up the URL associated with the name "signup" in the project's URL configurations #}
+		<p class="signup-link">Don't have an account?<a href="{% url 'signup' %}"> Sign Up</a></p>
+		
+	</div>
+</body>
+</html>

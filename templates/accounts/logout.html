@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Logged Out</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_logout.css' %}">
+	
+</head>
+<body class="body">
+
+	<div class="logout-container">
+	
+		<div class="logo-area">
+			<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+		</div>
+		
+		<div class="content-area">
+			<h1>You have been successfully logged out.</h1>
+			<p><a href="{% url 'login' %}" class="btn">Log In Again</a></p>
+			<p class="signup-text">Don't have an account?<a href="{% url 'signup' %}"> Sign Up</a></p>
+		</div>
+		
+	</div>
+	
+</body>
+</html>

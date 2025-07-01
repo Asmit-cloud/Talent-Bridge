@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Chat with {% if other_participant %}{{ other_participant.username }}{% else %}Chat Room {{ chat_room.id }}{% endif %}</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_chat_room.css' %}">
+	
+</head>
+<body class="body">
+	<div class="chat-container">
+	
+		<div class="chat-header">
+			<span>Chat with {% if other_participant %}{{ other_participant.username }}{% else %}Chat Room {{ chat_room.id }}{% endif %}</span>
+			<a href="{% url 'public_user_profile' user_id=other_participant.id %}">View Profile</a>
+		</div>
+		
+		<div id="chat-messages" class="chat-messages">
+			{% for message in messages %}
+				<div class="message-item {% if message.sender == current_user %}message-sent{% else %}message-received{% endif %}">
+					<div>
+					
+						<div class="message-bubble">
+							{{ message.content }}
+						</div>
+						
+						<div class="message-meta">
+							{% if message.sender == current_user %}You{% else %}{{ message.sender.username }}{% endif %}
+							at {{ message.timestamp|date:"H:i" }}
+						</div>
+					
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		
+		<div class="chat-input-area">
+			<input id="chat-message-input" type="text" placeholder="Type your message here...">
+			<button id="chat-message-submit">Send</button>
+		</div>
+	</div>
+	
+	<script>
+		const chat_room_id_json = JSON.stringify("{{ chat_room.id }}");
+		const currentUserName_json = JSON.stringify("{{ current_user.username }}");
+	</script>
+	
+	<script src="{% static 'js/chat_room.js' %}"></script>
+	
+</body>
+</html>

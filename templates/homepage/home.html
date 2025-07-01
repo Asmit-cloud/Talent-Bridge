@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Home - SkillSwap Network</title>
+	
+	{% load static %}
+	
+	<link rel="icon" type="image/png" href="{% static 'img/favicon/favicon-96x96.png' %}" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="{% static 'img/favicon/favicon.svg' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}" />
+	<meta name="apple-mobile-web-app-title" content="SkillSwap Network %}" />
+	<link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}" />
+	
+	<link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+	
+</head>
+<body class="body">
+
+	<header class="site-header">
+		<div class="logo-area">
+			<img src="{% static 'img/Logo.png' %}" alt="SkillSwap Network Logo" class="brand-logo">
+		</div>
+		<div class="container">
+			<h1 class="site-title">Welcome {{ user.username }}!</h1>
+		</div>
+	</header>
+	
+	<main class="main-content">
+		<div class="container content-wrapper">
+			<nav class="user-nav">
+				<ul class="nav-links auth-links">
+					<li><a href="{% url 'user_profile' %}?from_home=true" class="button-primary">View My Profile</a></li>
+					<li><a href="{% url 'add_skills' %}" class="button-primary">Manage My Skills</a></li>
+					<li><a href="{% url 'browse_skills' %}" class="button-primary">Browse Skills</a></li>
+					<li><a href="{% url 'logout' %}" class="button-secondary">Logout</a></li>
+				</ul>
+			</nav>
+		</div>
+	</main>
+	
+	<footer class="site-footer">
+		<div class="container">
+			<p>&copy; 2025 SkillSwap Network</p>
+			<br>
+			<p>Your platform for sharing and discovering skills.</p>
+		</div>
+	</footer>
+	
+</body>
+</html>
