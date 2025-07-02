@@ -53,7 +53,7 @@ body {
 	margin-bottom: 20px;
 	font-weight: 700;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-	background: linear-gradient(90deg, #2052e8, #2362f7);          
+	background: linear-gradient(90deg, #49bff5, #4a5fff);          
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -75,39 +75,39 @@ body {
 }
 
 .btn-back-to-list {
-	background: linear-gradient(to right, #345eda, #477bf3);                                 
+	background: linear-gradient(to right, #49bff5, #4a5fff);                                 
 	color: #ffffff;
 	box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 	margin-top: 15px;
 }
 
 .btn-back-to-list:hover {
-	background: linear-gradient(to right, #2e54c7, #4070de);                                
+	background: linear-gradient(to right, #44b1e3, #3f52e0);                                
 	box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
 	transform: translateY(-2px);
 }
 
 .btn-edit-profile {
-	background: linear-gradient(to right, #345eda, #477bf3);                                
+	background: linear-gradient(to right, #49bff5, #4a5fff);                                
 	color: #ffffff;
-	box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+	box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 	margin-top: 20px;
 }
 
 .btn-edit-profile:hover {
-	background: linear-gradient(to right, #2e54c7, #4070de);                                
-	box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+	background: linear-gradient(to right, #44b1e3, #3f52e0);                                
+	box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
 	transform: translateY(-5px);
 }
 
 .btn-home {
-	background: linear-gradient(to right, #345eda, #477bf3);                                
+	background: linear-gradient(to right, #49bff5, #4a5fff);                                
 	color: #ffffff;
 	box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
 
 .btn-home:hover {
-	background: linear-gradient(to right, #2e54c7, #4070de);                                
+	background: linear-gradient(to right, #44b1e3, #3f52e0);                                
 	box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
 	transform: translateY(-2px);
 }
@@ -149,7 +149,7 @@ body {
 
 /* Styles for card headers */
 .card-header {
-	background: linear-gradient(135deg, #345eda, #477bf3);                                   
+	background: linear-gradient(135deg, #49bff5, #4a5fff);                                   
 	color: #ffffff;
 	padding: 18px 25px;
 	font-weight: 600;
