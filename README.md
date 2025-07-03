@@ -164,6 +164,73 @@ The application should now be accessible at http://127.0.0.1:8000/.
 
 
 
+## Database Management
+---
+
+### 1. Manual Database Backup (from Render to Local)
+
+To create a backup of the remote PostgreSQL database (e.g., from Render) to your local machine, use the `pg_dump` command.
+
+Ensure you have PostgreSQL client tools installed locally and replace the placeholders with your actual database credentials from your Render service.
+
+**Prerequisites:**
+* PostgreSQL client tools (including `pg_dump`) installed locally.
+* Your Render PostgreSQL service's External Connection String details.
+* Your command prompt/terminal should be in a directory where you have write permissions (e.g., `C:\Users\YourUser\Documents\DB_Backups`).
+
+**Command:**
+
+```cmd
+SET PGPASSWORD=YOUR_RENDER_DATABASE_PASSWORD && SET PGSSLMODE=require && "C:\Program Files\PostgreSQL\17\bin\pg_dump.exe" -h YOUR_RENDER_DATABASE_HOST -p 5432 -U YOUR_RENDER_DATABASE_USER -d YOUR_RENDER_DATABASE_NAME > skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql
+```
+
+
+### 2. Manual Database Restoration (from Local Backup)
+
+To restore a `.sql` backup file to a PostgreSQL database (either local or on Render), use the `psql` command.
+
+**Important:** Always restore into an *empty database*.
+
+If you are restoring to an existing database, ensure you are comfortable overwriting its contents. You might need to drop and re-create the database first if it contains data you don't want.
+
+**A. Restoring to Your Local PostgreSQL Database (For Development)**
+
+*Step 1: Create an empty database:*
+
+```sql
+# Connect to your local PostgreSQL (e.g., as 'postgres' user)
+psql -U postgres -h localhost -p 5432
+# Then, at the psql prompt:
+CREATE DATABASE skillswap_local_db;
+\q
+```
+
+*Step 2: Run the restore command:*
+
+```cmd
+SET PGPASSWORD=YOUR_LOCAL_POSTGRES_PASSWORD && "C:\Program Files\PostgreSQL\17\bin\psql.exe" -h localhost -p 5432 -U postgres -d skillswap_local_db < skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql
+```
+
+Replace `skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql` with the name of your backup file.
+
+**Restoring to a NEW Render PostgreSQL Database (For Disaster Recovery)**
+
+*Step 1: Create a brand new PostgreSQL service on Render:*
+
+This will give you new credentials and an empty database.
+
+*Step 2: Get the new External Connection String details (Host, Port, User, Password, DB Name) for this new Render database.*
+
+*Step 3: Run the restore command:*
+
+```cmd
+SET PGPASSWORD=NEW_RENDER_DATABASE_PASSWORD && SET PGSSLMODE=require && "C:\Program Files\PostgreSQL\17\bin\psql.exe" -h NEW_RENDER_DATABASE_HOST -p 5432 -U NEW_RENDER_DATABASE_USER -d NEW_RENDER_DATABASE_NAME < skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql
+```
+
+Replace `skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql` with the name of your backup file.
+
+
+
 ## Diving Deeper
 ---
 
