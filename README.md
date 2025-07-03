@@ -282,6 +282,18 @@ Replace `skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql` with the name of your 
 ├──── requirements.txt
 ```
 
+### Testing and Quality Assurance
+
+**Current Status:**
+
+For this initial version of the project, my primary focus has been on successfully implementing core features and deploying the application within a tight timeline.
+
+As such, a comprehensive suite of automated tests and a full CI/CD pipeline are planned for future development phases.
+
+**Future Enhancements:**
+
+Implementing thorough unit, integration, and end-to-end tests, alongside a robust CI/CD pipeline, will be a high priority for future iterations of this project and all subsequent developments.
+
 
 
 ## Contributing and Support
