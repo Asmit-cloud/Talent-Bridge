@@ -2,7 +2,6 @@
 
 
 ## The Foundation
----
 
 ### Core Value Proposition
 
@@ -74,7 +73,6 @@ Please note that the user accounts in **this application are entirely fictional 
 
 
 ## Getting Started
----
 
 ### Get Started Quickly
 
@@ -165,7 +163,6 @@ The application should now be accessible at http://127.0.0.1:8000/.
 
 
 ## Database Management
----
 
 ### 1. Manual Database Backup (from Render to Local)
 
@@ -230,9 +227,7 @@ SET PGPASSWORD=NEW_RENDER_DATABASE_PASSWORD && SET PGSSLMODE=require && "C:\Prog
 Replace `skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql` with the name of your backup file.
 
 
-
 ## Diving Deeper
----
 
 ### Technical Stack
 1. Backend: Python, Django
@@ -290,7 +285,6 @@ Replace `skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql` with the name of your 
 
 
 ## Contributing and Support
----
 
 The SkillSwap Network welcomes contributions!
 
@@ -315,7 +309,6 @@ The SkillSwap Network welcomes contributions!
 
 
 ## Essential Information
----
 
 1. **License:** [MIT License](LICENSE)
 
