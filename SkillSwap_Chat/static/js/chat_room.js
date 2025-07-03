@@ -3,7 +3,7 @@ const chatRoomId = JSON.parse(chat_room_id_json);
 const currentUserName = JSON.parse(currentUserName_json);
 
 const chatSocket = new WebSocket(
-	'ws://' + window.location.host + '/ws/chat/' + chatRoomId + '/'
+	'wss://' + window.location.host + '/ws/chat/' + chatRoomId + '/'
 );
 
 const chatMessages = document.getElementById("chat-messages");
