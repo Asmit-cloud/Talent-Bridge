@@ -244,7 +244,6 @@ Replace `skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql` with the name of your 
 │       ├── settings.py
 │       ├── urls.py
 │       ├── wsgi.py
-├──── media/
 ├──── SkillSwap_Chat/
 │        ├── migrations/ 
 │        ├── static/
@@ -276,9 +275,8 @@ Replace `skillswap_network_db_backup_YYYYMMDD_HHMMSS.sql` with the name of your 
 │        ├── accounts/
 │        ├── homepage/
 ├──── .gitignore
-├──── db.sqlite3
-├──── manage.py
 ├──── README
+├──── manage.py
 ├──── requirements.txt
 ```
 
