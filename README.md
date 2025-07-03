@@ -24,31 +24,44 @@
 1. **User Authentication:** Secure user registration, login and logout functionalities.
 
     ![LOGIN](static/img/readme_images/Login.jpg)
+    <br>
+    <br>
     
 2. **Comprehensive User Profile:** Users can create and mange their personal profiles, including a bio, location, and a clear display of the skills they offer and need.
 
     ![PROFILE](static/img/readme_images/Profile.jpg)
-
+    <br>
+    <br>
+    
 3. **Skill Management:** Users can easily add, update, and categorize skills they possess and skill they wish to acquire, specifying proficiency levels for each.
 
     ![SKILL MANAGEMENT](static/img/readme_images/SkillManagement.jpg)
-
+    <br>
+    <br>
+    
 4. **Skill Browse:** Explore a wide array of skills available on the platform, categorized by whether they are "offered" or "needed" by the users.
 
     ![BROWSING SKILL](static/img/readme_images/SkillBrowsing.jpg)
-
+    <br>
+    <br>
+    
 5. **User Discovery:** Discover other users based on the skills they offer or need, enabling targeted connections.
 
     ![DISCOVERING AN USER](static/img/readme_images/UserDiscovery.jpg)
-
+    <br>
+    <br>
+    
 6. **Real-time Chat Functionality:** Engage in instant messaging with other users through a dedicated chat interface, facilitating direct communication for skill exchange.
 
     ![CHAT](static/img/readme_images/Chat.jpg)
-
+    <br>
+    <br>
+    
 7. **One-to-One Chat Initiation:** Seamlessly start private conversations with other users directly from their profiles.
 
     ![SEAMLESS CHAT](static/img/readme_images/SeamlessChat.jpg)
-    
+    <br>
+        
 <br>
 
 ### Data Disclaimer
