@@ -65,9 +65,18 @@ Please note that the user accounts in **this application are entirely fictional 
 
 ### Get Started Quickly
 
-SkillSwap Network is currently in active development.
+Ready to connect? The **SkillSwap Network** is now publicly available.
+
+**Access the application here:** [SkillSwap Network](https://skillswap-network.onrender.com)
 <br>
-I am diligently working on deploying the backend services to Render.com to ensure seamless and public accessibility.
+
+**CRITICAL AVAILABILITY NOTE (PLEASE READ!)**
+
+**Immediate Action Required:** Please be aware that the SkillSwap Network's database is currently on a free tier and is scheduled to be **deleted on August 1, 2025**, unless upgraded to a paid instance.
+
+This means that after **August 1, 2025**, the live application will likely become **unavailable** and all user data will be lost, unless a paid upgrade is made.
+
+While I will lose access to my PC and laptop for a period, preventing me from immediately addressing this or re-deploying, please rest assured that the project's full codebase and technical documentation will always remain available on GitHub for reference and local development.
 
 
 ### Building From Source
@@ -148,7 +157,7 @@ The application should now be accessible at http://127.0.0.1:8000/.
 ### Technical Stack
 1. Backend: Python, Django
 2. Real-time Communication: Django Channels (for WebSockets)
-3. Database: SQLite
+3. Database: PostgreSQL
 4. Frontend: HTML, CSS, JavaScript
 
 
