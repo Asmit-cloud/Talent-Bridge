@@ -300,13 +300,13 @@ The SkillSwap Network welcomes contributions!
 
 ### How to Get Help or Provide Feedback
 
-1. **Reporting Bugs:** If you encounter any bugs, please open an issue on the project's GitHub Issues Page.  
+1. **Reporting Bugs:** If you encounter any bugs, please open an issue on the project's [GitHub Issues Page](https://github.com/Asmit-cloud/Talent-Bridge/issues).  
 
    Provide a clear description of the bug, steps to reproduce it, and any error messages.
 
-2. **Suggesting Features:** Have an idea for a new feature or improvement? Feel free to open an issue on the GitHub Issues Page to discuss it.
+2. **Suggesting Features:** Have an idea for a new feature or improvement? Feel free to open an issue on the [GitHub Issues Page](https://github.com/Asmit-cloud/Talent-Bridge/issues) to discuss it.
 
-3. **General Questions or Feedback:** For general questions or feedback about the project, you can also use the GitHub Issues Page, or if you prefer a more direct approach for quick inquiries, you can reach out via my contact email (see "**Contact Information**" below).
+3. **General Questions or Feedback:** For general questions or feedback about the project, you can also use the [GitHub Issues Page](https://github.com/Asmit-cloud/Talent-Bridge/issues), or if you prefer a more direct approach for quick inquiries, you can reach out via my contact email (see "**Contact Information**" below).
 
 4. **Coding Guidelines:** Follow PEP-8 guidelines for Python.
 
