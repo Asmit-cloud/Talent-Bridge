@@ -63,6 +63,20 @@
         
 <br>
 
+## Live Demo and Walkthrough
+
+<br>
+
+To provide a comprehensive understanding of the SkillSwap Network's features, including its real-time chat functionality, a detailed video walkthrough has been provided below.  
+This video showcases key user flows and interactions that would typically be experienced in a live environment.
+
+<br>
+
+[Watch the Project](https://drive.google.com/file/d/1Iy--weoqQZGN8B33VpaHX6J12VbIEemg/view?usp=drive_link)
+
+<br>
+<br>
+
 ### Data Disclaimer
 Please note that the user accounts in **this application are entirely fictional and for demonstration purposes only**. While real **district and country names** are used for context, no actual personal user data is involved.
 
@@ -88,6 +102,8 @@ Ready to connect? The **SkillSwap Network** is now publicly available.
 This means that after **August 1, 2025**, the live application will likely become **unavailable** and all user data will be lost, unless a paid upgrade is made.
 
 While I will lose access to my PC and laptop for a period, preventing me from immediately addressing this or re-deploying, please rest assured that the project's full codebase and technical documentation will always remain available on GitHub for reference and local development.
+
+**Given these upcoming changes, the primary way to experience the application's full functionality, including its real-time chat, will be through the provided "Live Demo & Walkthrough" video above. This ensures a thorough review of all features, even if the live demo instance becomes inactive.**
 
 
 ### Building From Source
