@@ -68,7 +68,11 @@
 <br>
 
 To provide a comprehensive understanding of the SkillSwap Network's features, including its real-time chat functionality, a detailed video walkthrough has been provided below.  
-This video showcases key user flows and interactions that would typically be experienced in a live environment.
+This video showcases key user flows and interactions that would typically be experienced in a live environment.  
+
+Please note that due to technical constraints related to the recording PC's specifications (Intel(R) Core(TM) i3-3240 CPU @ 3.40GHz, 8.00 GB RAM), the visual quality of the video may appear lower than ideal.  
+
+Rest assured, the video's content thoroughly demonstrates all features, ensuring a comprehensive review even if the live demo instance becomes inactive after August 1, 2025.
 
 [Watch the Project](https://youtu.be/RpzQ0nF28Tw)
 <br>
@@ -86,7 +90,7 @@ Please note that the user accounts in **this application are entirely fictional 
 
 ### Get Started Quickly
 
-Ready to connect? The **SkillSwap Network** is now publicly available.
+Ready to connect? The **SkillSwap Network** is now publicly available!
 
 **Access the application here:** [SkillSwap Network](https://skillswap-network.onrender.com)
 <br>
