@@ -70,11 +70,7 @@
 To provide a comprehensive understanding of the SkillSwap Network's features, including its real-time chat functionality, a detailed video walkthrough has been provided below.  
 This video showcases key user flows and interactions that would typically be experienced in a live environment.
 
-<br>
-
-[Watch the Project](https://drive.google.com/file/d/1Iy--weoqQZGN8B33VpaHX6J12VbIEemg/view?usp=drive_link)
-
-<br>
+[Watch the Project](https://drive.google.com/file/d/1fDSrBwqwdAbyS51T_q8HYuUQevprHxiL/view?usp=drive_link)
 <br>
 
 ### Data Disclaimer
