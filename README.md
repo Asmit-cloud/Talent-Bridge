@@ -74,7 +74,7 @@ Please note that due to technical constraints related to the recording PC's spec
 
 Rest assured, the video's content thoroughly demonstrates all features, ensuring a comprehensive review even if the live demo instance becomes inactive after August 1, 2025.
 
-[Watch the Project](https://youtu.be/RpzQ0nF28Tw)
+[Watch the Project](https://youtu.be/dtBArZhANys)
 <br>
 
 ### Data Disclaimer
