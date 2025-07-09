@@ -358,4 +358,4 @@ The SkillSwap Network welcomes contributions!
 
     * [Email](mailto:byte.100.tron@gmail.com) me for inquiries.
     
-    * Connect on [LinkedIn](www.linkedin.com/in/asmit-de-orbitingwithpython).
+    * Connect on [LinkedIn](https://www.linkedin.com/in/asmit-de-orbitingwithpython).
