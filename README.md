@@ -354,4 +354,8 @@ The SkillSwap Network welcomes contributions!
         
     * **Django Documentaion:** For comprehensive guide and tutorials that significantly aided the development process.
        
-3. **Contact Information:** [Email](mailto:byte.100.tron@gmail.com) me for inquiries.
+3. **Contact Information:**
+
+    * [Email](mailto:byte.100.tron@gmail.com) me for inquiries.
+    
+    * Connect on [LinkedIn](www.linkedin.com/in/asmit-de-orbitingwithpython).
